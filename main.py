@@ -16,40 +16,34 @@ def clear():
 
 # Genetic Algorithm
 
-# target to be reached
+# target
 target = 'To be or not to be.'
-
 # mutation rate
-mulation_rate = 0.01
-
+mutation_rate = 0.01
 # size of population
-population_size = 200
+population_size = 400
 
 
 
 # main function
 def main():
-
-  p = Population(population_size, target, mulation_rate)
-
+  p = Population(population_size, target, mutation_rate)
   p.generate_population()
 
   while True:
     # calculating fitness of individuals in population
     p.calc_fitness()
 
-    # displaying info on screen
     print('\n')
-    print('Best Individual:', ''.join(p.current.genes))
-    print('Best Individual\'s fitness:', p.current.fitness * 100)
+    print(''.join(p.best_individual.genes))
     print('\n')
-    print('Total Generation:', p.generation)
-    print('Average Fitness of', p.generation, 'generation population: ', p.avg_fitness * 100)
-    print('\n')
+    print('Generation:', p.generation)
+    print('Mutation Rate:', p.mutation_rate * 100, '%')
+    print('Average Fitness: ', p.total_fitness / p.population_size * 100, '%')
 
     # checking if current best individual is equals to best individual
-    if p.current.fitness == 1:
-      break;
+    if p.best_individual.fitness == 1:
+      break
 
     # selecting parents for reproduction
     p.natural_selection()
