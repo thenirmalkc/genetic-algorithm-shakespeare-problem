@@ -24,7 +24,6 @@ mutation_rate = 0.01
 population_size = 400
 
 
-
 # main function
 def main():
   p = Population(population_size, target, mutation_rate)

@@ -66,6 +66,7 @@ class Population:
           self.parents.append(self.population[j])
           break
 
+
   # reproducing new population from parents
   def reproduction(self):
     new_population = []

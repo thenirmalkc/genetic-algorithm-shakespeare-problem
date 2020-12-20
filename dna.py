@@ -56,6 +56,7 @@ class DNA:
 
 
 
+
 # generates random characters
 def random_char():
   return chr(rand.randrange(32, 127))
